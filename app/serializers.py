@@ -23,8 +23,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     # get_work_points_display可执行callable，但不用加括号
     # source可以指定字段也可以指定可执行
-    #使用post会报错，无论填写数字还是汉字 可能是没重写create方法？
-
+    #使用post会报错，无论填写数字还是汉字，可能是没重写create方法？
     work_points=serializers.CharField(source='get_work_points_display')
 
     #唯一外键的添加方式
