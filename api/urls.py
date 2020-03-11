@@ -21,9 +21,11 @@ from app import views
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
 router.register(r'tests', views.TestViewSet)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('create/', views.create),
+    path('roles/', views.RoleView.as_view()),
     path('api/', include(router.urls)),
     path('api/api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
